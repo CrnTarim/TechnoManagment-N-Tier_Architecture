@@ -18,7 +18,7 @@ namespace TechnoEntity.Entities
         public string ProductFirm { get; set; }
 
 
-        // Ürünü ekleyen kullanıcının ID'si - Foreign Key
+      
         [ForeignKey("User")]
         public Guid UserID { get; set; }
         public virtual User User { get; set; }

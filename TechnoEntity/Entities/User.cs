@@ -16,7 +16,7 @@ namespace TechnoEntity.Entities
         public string UserEmail { get; set; }
         public string UserPhone { get; set; }
 
-        // Kullanıcının sahip olduğu ürünler
+     
         public virtual ICollection<Product> Products { get; set; }
     }
 }
