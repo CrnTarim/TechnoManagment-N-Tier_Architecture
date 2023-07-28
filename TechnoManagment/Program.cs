@@ -25,7 +25,7 @@ namespace TechnoManagment
             IRepository<Product> productRepository = new Repository<Product>();
             ProductController proCon = new ProductController(productRepository);
 
-            List<Product> products = new List<Product>();
+            List<Product> Userproducts = new List<Product>();
 
             Console.WriteLine("WELCOME TO MANAGMENT PAGE! THIS PAGE OPENS AUTOMATICLY!\n");
 
@@ -267,9 +267,9 @@ namespace TechnoManagment
                         break;
                     case 2:
                         // Delete Product
-                        
-                        List<Product> userProducts = proCon.FindProducts(p => p.UserID == userToFind.UserID);
-                        foreach (Product p in userProducts)
+
+                        Userproducts = proCon.FindProducts(p => p.UserID == userToFind.UserID);
+                        foreach (Product p in Userproducts)
                         {
                             Console.WriteLine($"ProductID: {p.ProductID}");
                             Console.WriteLine($"ProductName: {p.ProductName}");
@@ -311,9 +311,9 @@ namespace TechnoManagment
                        
                         break;
                     case 3:
-                        
-                        List<Product> userProduct = proCon.FindProducts(p => p.UserID == userToFind.UserID);
-                        foreach (Product p in userProduct)
+
+                        Userproducts = proCon.FindProducts(p => p.UserID == userToFind.UserID);
+                        foreach (Product p in Userproducts)
                         {
                             Console.WriteLine($"ProductID: {p.ProductID}");
                             Console.WriteLine($"ProductName: {p.ProductName}");
@@ -332,7 +332,7 @@ namespace TechnoManagment
                             break;
                         }
 
-                        Product existingProduct = products.FirstOrDefault(p => p.ProductID == productIdToUpdate);
+                        Product existingProduct = Userproducts.FirstOrDefault(p => p.ProductID == productIdToUpdate);
 
                         if (existingProduct == null)
                         {
@@ -382,8 +382,8 @@ namespace TechnoManagment
                         break;
                        
                     case 4:
-                        List<Product> userProductshow = proCon.FindProducts(p => p.UserID == userToFind.UserID);
-                        foreach (Product p in userProductshow)
+                        Userproducts = proCon.FindProducts(p => p.UserID == userToFind.UserID);
+                        foreach (Product p in Userproducts)
                         {
                             Console.WriteLine($"ProductID: {p.ProductID}");
                             Console.WriteLine($"ProductName: {p.ProductName}");
